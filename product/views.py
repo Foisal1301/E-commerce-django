@@ -10,7 +10,7 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 
 class LatestProductList(APIView):
 	def get(self,request,format=None):
-		products = Product.objects.all()[:4]
+		products = Product.objects.all()
 		serializer = ProductSerializer(products,many=True)
 		return Response(serializer.data)
 
